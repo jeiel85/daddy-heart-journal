@@ -1,6 +1,0 @@
-{
-  "name": "아빠의 기록장",
-  "description": "가족에게 남기고 싶은 이야기, 아이에게 해주고 싶은 말, 아내에게 고마운 일들을 글과 목소리로 기록하는 아빠 전용 로컬 감성 일기장",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

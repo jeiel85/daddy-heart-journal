@@ -1,0 +1,8 @@
+<ko-KR>
+아빠의 기록장 첫 릴리즈입니다.
+가족에게 남기고 싶은 글과 목소리를 기기 안에 저장하고, 가족별 기록, 마음 태그, 타임캡슐, PIN 잠금으로 소중한 이야기를 차분히 보관할 수 있습니다.
+</ko-KR>
+<en-US>
+Initial release of Daddy Heart Journal.
+Save letters and optional voice memories on device, organize them by family member and emotion tag, protect them with a PIN, and prepare time-capsule messages for meaningful future dates.
+</en-US>

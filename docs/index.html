@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>아빠의 기록장</title>
+    <meta name="description" content="글과 목소리로 가족에게 남길 마음을 기기 안에 보관하는 아빠 전용 로컬 감성 일기장입니다.">
+    <meta property="og:title" content="아빠의 기록장">
+    <meta property="og:description" content="아빠의 말과 목소리를 가족에게 남기는 Android 로컬 일기장">
+    <meta property="og:image" content="https://jeiel85.github.io/daddy-heart-journal/assets/landing-og.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #fff7ec;
+        --ink: #2f211b;
+        --muted: #72594c;
+        --espresso: #5a3828;
+        --terracotta: #b76745;
+        --cream: #ffe8c8;
+        --line: rgba(90, 56, 40, 0.16);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.6;
+      }
+
+      a { color: inherit; }
+
+      header {
+        min-height: 78vh;
+        display: grid;
+        align-items: center;
+        background:
+          linear-gradient(90deg, rgba(47, 33, 27, 0.82), rgba(47, 33, 27, 0.52), rgba(47, 33, 27, 0.08)),
+          url("assets/landing-hero.png") center / cover no-repeat;
+        color: white;
+      }
+
+      nav, .hero, main, footer {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      nav {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 22px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+      }
+
+      .brand img {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 18px;
+        font-weight: 700;
+      }
+
+      .hero {
+        padding: 90px 0 64px;
+      }
+
+      .eyebrow {
+        margin: 0 0 12px;
+        color: var(--cream);
+        font-weight: 800;
+      }
+
+      h1 {
+        max-width: 650px;
+        margin: 0;
+        font-size: clamp(42px, 8vw, 86px);
+        line-height: 1.04;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 610px;
+        margin: 22px 0 32px;
+        font-size: 20px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 18px;
+        border-radius: 8px;
+        background: white;
+        color: var(--espresso);
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .button.secondary {
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        background: rgba(255, 255, 255, 0.14);
+        color: white;
+      }
+
+      main {
+        padding: 56px 0;
+      }
+
+      section {
+        padding: 36px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 22px;
+        background: rgba(255, 255, 255, 0.58);
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 19px;
+      }
+
+      .card p, .muted {
+        color: var(--muted);
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .icon-preview {
+        width: min(260px, 100%);
+        border-radius: 34px;
+        box-shadow: 0 28px 70px rgba(90, 56, 40, 0.28);
+      }
+
+      footer {
+        padding: 32px 0 48px;
+        color: var(--muted);
+      }
+
+      @media (max-width: 760px) {
+        header { min-height: 88vh; }
+        nav { align-items: flex-start; }
+        .nav-links { display: none; }
+        .grid, .split { grid-template-columns: 1fr; }
+        .lead { font-size: 18px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav aria-label="주요 링크">
+        <div class="brand">
+          <img src="assets/app-icon.png" alt="">
+          <span>아빠의 기록장</span>
+        </div>
+        <div class="nav-links">
+          <a href="#features">기능</a>
+          <a href="privacy.html">개인정보</a>
+          <a href="https://github.com/jeiel85/daddy-heart-journal">GitHub</a>
+        </div>
+      </nav>
+      <div class="hero">
+        <p class="eyebrow">Local-first Android journal</p>
+        <h1>아빠의 말과 목소리를 가족에게 남기는 기록장</h1>
+        <p class="lead">아이에게 해주고 싶은 조언, 아내에게 고마운 마음, 훗날 꺼내보고 싶은 목소리를 기기 안에 조용히 보관합니다.</p>
+        <div class="buttons">
+          <a class="button" href="https://github.com/jeiel85/daddy-heart-journal">GitHub에서 보기</a>
+          <a class="button secondary" href="privacy.html">개인정보처리방침</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="features">
+        <h2>마음을 남기는 데 필요한 기능만 담았습니다</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>글과 음성 기록</h3>
+            <p>편지처럼 글을 쓰고, 원할 때 아빠의 실제 목소리도 함께 남길 수 있습니다.</p>
+          </article>
+          <article class="card">
+            <h3>가족별 정리</h3>
+            <p>아이, 아내, 가족 전체처럼 받는 사람을 나누고 마음 태그로 다시 찾습니다.</p>
+          </article>
+          <article class="card">
+            <h3>타임캡슐</h3>
+            <p>생일, 기념일, 미래의 어느 날에 맞춰 기록을 천천히 열어볼 수 있습니다.</p>
+          </article>
+        </div>
+      </section>
+      <section class="split">
+        <div>
+          <h2>서버보다 가까운 곳에</h2>
+          <p class="muted">기록은 기본적으로 단말기 내부에 저장됩니다. 광고 SDK, 분석 SDK, 서버 동기화를 넣지 않고 로컬 보관 경험에 집중했습니다.</p>
+        </div>
+        <img class="icon-preview" src="assets/app-icon.png" alt="아빠의 기록장 앱 아이콘">
+      </section>
+      <section>
+        <h2>릴리즈 정보</h2>
+        <p class="muted">현재 Android 패키지명은 <strong>com.jeiel.daddyheartjournal</strong>, 버전은 <strong>1.0.0</strong>입니다. Play Console 그래픽 자료는 저장소의 <strong>store-graphics/play-console-current</strong> 폴더에 준비되어 있습니다.</p>
+      </section>
+    </main>
+    <footer>
+      <p>아빠의 기록장 · 가족에게 남기는 가장 따뜻한 로컬 기록</p>
+    </footer>
+  </body>
+</html>
